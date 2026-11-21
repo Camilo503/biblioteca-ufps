@@ -27,6 +27,7 @@ class Libro(models.Model):
         Categoria, on_delete=models.PROTECT, related_name="libros"
     )
     autores = models.ManyToManyField(Autor, related_name="libros")
+    idioma = models.CharField(max_length=30, default="Español")
 
     def __str__(self):
         return f"{self.titulo} ({self.anio_publicacion})"
